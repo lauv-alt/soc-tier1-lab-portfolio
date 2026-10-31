@@ -14,6 +14,11 @@ Building hands-on Tier 1 SOC skills through home lab and real alert triage.
 - Windows 10 Agent + Sysmon
 - Forwarding Security, Sysmon, PowerShell logs
 
+- ### Lab Setup Steps:
+1. **System Hardening First:** Ran `sudo apt update && sudo apt upgrade -y` to patch OS vulnerabilities and update dependencies before SIEM installation. This reduces attack surface and ensures Wazuh dependencies (curl, openssl) are current - standard SOC hardening procedure.
+2. Installed Wazuh All-in-One (Manager + Indexer + Dashboard) via official install script
+3. Documented each step with screenshots in `/screenshots/wazuh-alerts/`
+
 **Detections Built:**
 - [x] Brute-force RDP (4625 multiple failures) -> Alert + MITRE T1110
 - [x] Mimikatz/PowerShell suspicious (4104 Script Block) -> Alert + MITRE T1003
